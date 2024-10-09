@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters.CoreServices" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\bin\SampleModule\x64\$(Configuration)\SampleModule.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NativeModule\NativeModule.vcxproj" />
+    <ProjectReference Include="..\SampleModule\SampleModule.vcxproj" />
+  </ItemGroup>
+
+</Project>
